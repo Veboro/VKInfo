@@ -7,6 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.net.URL;
+
+import static com.veboro.vkinfo.utils.NetworkUtils.generateURL;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText searchField;
@@ -26,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                result.setText("Button was pressed");
+                URL generatedURL = generateURL(searchField.getText().toString());
+                result.setText(generatedURL.toString());
             }
         };
 
